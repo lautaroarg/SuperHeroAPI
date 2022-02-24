@@ -67,7 +67,7 @@ namespace SuperHeroAPI.Controllers
         public async Task<ActionResult<List<SuperHero>>> UpdateHero(SuperHero request)
         {
             //var hero = heroes.Find(h => h.SHID == request.SHID);
-            var Dbhero = await _superHeroContext.SuperHeroes.FindAsync(request);
+            var Dbhero = await _superHeroContext.SuperHeroes.FindAsync(request.SHID);
             if (Dbhero == null)
             {
                 return BadRequest("SuperHero not found");
